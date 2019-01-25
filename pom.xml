@@ -17,6 +17,11 @@
     <protoc.version>3.5.1-1</protoc.version>
   </properties>
 
+  <scm>
+    <developerConnection>scm:git:git@github.com:racker/salus-telemetry-protocol.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
   <dependencies>
 
     <dependency>
@@ -115,10 +120,25 @@
         </executions>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <!-- override default artifactId-version -->
+          <tagNameFormat>@{project.version}</tagNameFormat>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 
   <distributionManagement>
+      <repository>
+          <id>releases</id>
+          <name>artifactory-artifactory-0-releases</name>
+          <url>http://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-release-local</url>
+      </repository>
       <snapshotRepository>
           <id>snapshots</id>
           <name>artifactory-artifactory-0-snapshots</name>
