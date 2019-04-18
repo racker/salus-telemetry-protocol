@@ -101,13 +101,11 @@
 
   <distributionManagement>
       <repository>
-          <id>releases</id>
-          <name>artifactory-artifactory-0-releases</name>
+          <id>salus-dev-release</id>
           <url>http://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-release-local</url>
       </repository>
       <snapshotRepository>
-          <id>snapshots</id>
-          <name>artifactory-artifactory-0-snapshots</name>
+          <id>salus-dev-snapshots</id>
           <url>https://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-snapshot-local</url>
       </snapshotRepository>
   </distributionManagement>
