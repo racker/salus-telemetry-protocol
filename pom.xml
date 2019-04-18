@@ -97,12 +97,45 @@
     </plugins>
   </build>
 
-<distributionManagement>
+  <distributionManagement>
     <snapshotRepository>
-        <id>snapshots</id>
-        <name>artifactory-artifactory-0-snapshots</name>
-        <url>https://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-snapshot-local</url>
+      <id>snapshots</id>
+      <name>artifactory-artifactory-0-snapshots</name>
+      <url>https://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
-</distributionManagement>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>libs-release</name>
+      <url>http://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-release</url>
+    </repository>
+    <repository>
+      <snapshots />
+      <id>snapshots</id>
+      <name>libs-snapshot</name>
+      <url>http://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-snapshot</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>libs-release</name>
+      <url>http://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-release</url>
+    </pluginRepository>
+    <pluginRepository>
+      <snapshots />
+      <id>snapshots</id>
+      <name>libs-snapshot</name>
+      <url>http://salus-artifactory.dev.monplat.rackspace.net/artifactory/libs-snapshot</url>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>
