@@ -91,6 +91,8 @@
         <configuration>
           <!-- override default artifactId-version -->
           <tagNameFormat>@{project.version}</tagNameFormat>
+          <!-- default is 'clean verify` but 'clean install` will ensure local system has artifact -->
+          <preparationGoals>clean install</preparationGoals>
         </configuration>
       </plugin>
 
