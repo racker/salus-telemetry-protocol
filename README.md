@@ -1,5 +1,11 @@
-This module contains Avro and Protobuf definitions for external and inter-service communication
+This module contains Protobuf definitions for external and inter-service communication
 in Salus Telemetry. The built library includes the Java classes generated from those definitions.
+
+This repository also supplies a Go library for using the Salus Telemetry protocols, which can be added as a dependency using:
+
+```bash
+go get -u github.com/racker/salus-telemetry-protocol
+```
 
 # Generating Java source from Avro/Protobuf schemas
 
@@ -17,6 +23,41 @@ mvn generate-sources
 Any regular Maven phases, like `compile`, `package`, or `install` will also work since they
 pass through the `generate-sources` phase, 
 [as seen here](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference).
+
+# Generating Go source
+
+**NOTE** unlike Java code generation, the generated Go source code **must be** source controlled. This is due to Go's ability to reference a git repository as the library/module rather than requiring a separately built and deployed artifact.
+
+## One-time setup
+
+Install Go 1.13 or newer.
+
+Install protoc by using one of the following options:
+- Follow the [instructions in the quickstart guide](install-protocol-buffers-v3)
+- On Mac OS you can use `brew install protobuf`
+- On Windows you can use `scoop install protobuf` where Scoop is available [here](https://scoop.sh/)
+- On Debian based Linux systems you can use `apt-get install protobuf-compiler`
+
+Download the modules required by the generated code by invoking
+```bash
+go mod download
+```
+
+Install the grpc plugin for protoc by invoking
+```bash
+go get github.com/golang/protobuf/protoc-gen-go
+```
+
+Make sure `$GOPATH/bin` is in your `$PATH`. If you don't have `$GOPATH` declared, reference `$HOME/go/bin` instead.
+
+## Re-generating source code
+
+When changes are made to the proto files, re-generate the `*.pb.go` files using:
+```bash
+go generate ./...
+```
+
+**Don't forget to git add and commit the re-generated files**
 
 # Performing a release
 
