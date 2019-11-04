@@ -4,7 +4,7 @@
 
   <groupId>com.rackspace.salus</groupId>
   <artifactId>salus-telemetry-protocol</artifactId>
-  <version>0.2.0</version>
+  <version>0.3-SNAPSHOT</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,7 +18,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:racker/salus-telemetry-protocol.git</developerConnection>
-    <tag>0.2.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <dependencies>
