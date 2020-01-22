@@ -24,6 +24,7 @@ message EnvoySummary {
 enum AgentType {
     TELEGRAF = 0;
     FILEBEAT = 1;
+    ORACLE   = 2;
 }
 
 message Agent {
