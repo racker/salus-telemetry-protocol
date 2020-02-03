@@ -25,6 +25,7 @@ enum AgentType {
     TELEGRAF = 0;
     FILEBEAT = 1;
     ORACLE   = 2;
+    PACKAGES = 3;
 }
 
 message Agent {
