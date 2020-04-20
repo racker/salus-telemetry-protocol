@@ -39,6 +39,8 @@ message EnvoyInstruction {
         EnvoyInstructionConfigure configure = 2;
         EnvoyInstructionRefresh refresh = 3;
         EnvoyInstructionTestMonitor testMonitor = 4;
+        // ready is sent by the Ambassador when it is ready to process keepalives and metrics
+        EnvoyInstructionReady ready = 5;
     }
 }
 
@@ -46,6 +48,8 @@ message EnvoyInstruction {
 message DetachedInstructions {
     repeated EnvoyInstruction instructions = 1;
 }
+
+message EnvoyInstructionReady {}
 
 message EnvoyInstructionInstall {
     Agent agent = 1;
