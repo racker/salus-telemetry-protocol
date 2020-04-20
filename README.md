@@ -45,7 +45,7 @@ go mod download
 
 Install the grpc plugin for protoc by invoking
 ```bash
-go get github.com/golang/protobuf/protoc-gen-go
+go install github.com/golang/protobuf/protoc-gen-go
 ```
 
 Make sure `$GOPATH/bin` is in your `$PATH`. If you don't have `$GOPATH` declared, reference `$HOME/go/bin` instead.
