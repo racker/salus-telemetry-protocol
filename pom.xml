@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright 2019 Rackspace US, Inc.
+  ~ Copyright 2020 Rackspace US, Inc.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -26,10 +26,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>11</java.version>
-    <!--  grpc version needs to align with the one used by io.etcd:jetcd:0.3.0 downstream  -->
-    <grpc.version>1.17.1</grpc.version>
-    <protoc.version>3.5.1-1</protoc.version>
-    <protobuf.version>3.9.0</protobuf.version>
+    <!--  grpc version needs to align with the one used by jetcd in etcd-adapter  -->
+    <grpc.version>1.28.1</grpc.version>
+    <protoc.version>3.11.4</protoc.version>
   </properties>
 
   <scm>
@@ -46,6 +45,16 @@
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-services</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
       <version>${grpc.version}</version>
     </dependency>
@@ -53,11 +62,6 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
       <version>${grpc.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
-      <version>${protobuf.version}</version>
     </dependency>
     <dependency>
       <!-- ensure compatible builds with Java 10, where `Generated` symbol is not exported by default -->

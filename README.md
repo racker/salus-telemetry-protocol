@@ -33,7 +33,7 @@ pass through the `generate-sources` phase,
 Install Go 1.13 or newer.
 
 Install protoc by using one of the following options:
-- Follow the [instructions in the quickstart guide](install-protocol-buffers-v3)
+- Follow the [instructions in the quickstart guide](https://grpc.io/docs/quickstart/go/#protocol-buffers)
 - On Mac OS you can use `brew install protobuf`
 - On Windows you can use `scoop install protobuf` where Scoop is available [here](https://scoop.sh/)
 - On Debian based Linux systems you can use `apt-get install protobuf-compiler`
@@ -45,7 +45,7 @@ go mod download
 
 Install the grpc plugin for protoc by invoking
 ```bash
-go install github.com/golang/protobuf/protoc-gen-go
+make install-grpc-plugin
 ```
 
 Make sure `$GOPATH/bin` is in your `$PATH`. If you don't have `$GOPATH` declared, reference `$HOME/go/bin` instead.
@@ -54,7 +54,7 @@ Make sure `$GOPATH/bin` is in your `$PATH`. If you don't have `$GOPATH` declared
 
 When changes are made to the proto files, re-generate the `*.pb.go` files using:
 ```bash
-go generate ./...
+make generate
 ```
 
 **Don't forget to git add and commit the re-generated files**
