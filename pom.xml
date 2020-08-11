@@ -27,7 +27,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>11</java.version>
     <!--  grpc version needs to align with the one used by jetcd in etcd-adapter  -->
-    <grpc.version>1.28.1</grpc.version>
+    <grpc.version>1.30.2</grpc.version>
     <protoc.version>3.11.4</protoc.version>
   </properties>
 
